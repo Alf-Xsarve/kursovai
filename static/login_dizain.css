@@ -1,0 +1,73 @@
+/* Основные стили для страницы входа */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #fff;
+}
+
+.auth-container {
+    background: white;
+    border-radius: 10px;
+    padding: 30px 40px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+.auth-container h2 {
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: black;
+}
+
+.auth-container label {
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.auth-container input[type="text"],
+.auth-container input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid gray(255, 255, 255, 0.2);
+    border-radius: 5px;
+    background: gray(255, 255, 255, 0.2);
+    color: black;
+    font-size: 1em;
+    outline: none;
+    transition: 0.3s;
+}
+
+.auth-container input[type="text"]:focus,
+.auth-container input[type="password"]:focus {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: gray;
+}
+
+.auth-container button {
+    width: 90%;
+    padding: 15px;
+    background: #8e44ad;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.auth-container button:hover {
+    background: #732d91;
+}

@@ -1,0 +1,206 @@
+a {
+    text-decoration: none;
+}
+/* Контейнер для контента */
+.content {
+    width: 96%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 40px 10px;
+}
+
+/* Полоска с карточками */
+#info-section {
+    display: flex;
+    flex-direction: column;
+    padding: 20px; /* Уменьшаем отступы внутри секции */
+    margin: auto 0;
+    width: 97%;
+    box-sizing: border-box;
+}
+
+/* Секция с информацией */
+.info-row {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px 20px;  /* Уменьшаем внутренние отступы */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;  /* Уменьшаем внешние отступы между секциями */
+    width: 100%;
+}
+
+/* Заголовок в полоске */
+.info-row h2 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+/* Контейнер для карточек */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Уменьшаем промежутки между карточками */
+    justify-content: flex-start;
+    padding: 10px;
+    background-color: transparent;
+}
+
+/* Карточка */
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 220px; /* Увеличиваем ширину карточки */
+    height: 300px; /* Увеличиваем высоту карточки */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Изображение внутри карточки */
+.card-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 5px;
+    background-color: gray;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Текст внутри карточки */
+.card h3 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+    text-align: center;
+    padding: 0 10px;
+}
+
+/* Описание карточки */
+.card p {
+    font-size: 12px;
+    color: #777;
+    margin-top: 10px;
+    padding: 0 10px;
+    text-align: center;
+}
+
+/* Стили для полосок */
+.info-row {
+    margin-top: 50px; /* Уменьшаем отступ сверху */
+    margin-bottom: 20px; /* Уменьшаем отступ снизу для создания пространства между элементами */
+    background-color: rgba(255, 255, 255, 0.8); /* Полоска с полупрозрачным белым фоном */
+    padding: 15px; /* Внутренние отступы для обеспечения пространства внутри элемента */
+    border-radius: 10px; /* Скругленные углы, чтобы сделать элемент визуально мягче */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легкая тень для создания эффекта отделения от фона */
+    transition: transform 0.3s ease-in-out; /* Плавный переход для анимации при изменении позиции */
+}
+
+.info-row:hover {
+    transform: translateY(-5px); /* Легкий эффект подъема при наведении (на 5 пикселей) */
+}
+
+.info-row h2 {
+    text-align: center; /* Выравнивание заголовка по центру */
+    font-size: 22px; /* Установка размера шрифта */
+    color: #333; /* Цвет шрифта, темно-серый */
+    font-weight: bold; /* Жирное начертание текста */
+    text-transform: uppercase; /* Преобразует текст в верхний регистр */
+    letter-spacing: 1px; /* Межбуквенное расстояние для улучшения читаемости */
+}
+
+/* Карточки */
+.card-container {
+    display: flex;
+    gap: 10px; /* Уменьшаем расстояние между карточками */
+    margin: 10px 0; /* Уменьшаем отступы сверху и снизу */
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 220px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень для карточки */
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Легкий эффект подъема карточки */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Усиление тени при наведении */
+}
+
+/* Изображение карточки */
+.card-image {
+    height: 150px;
+    background-image: url("foto_1.webp");  /* Путь к изображению по умолчанию */
+    background-size: cover;
+    background-position: center;
+    border-bottom: 2px solid #ddd; /* Линия снизу карточки */
+}
+
+.card h3 {
+    margin: 10px 0;
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+.card p {
+    margin: 0 15px 15px;
+    font-size: 14px;
+    color: #777;
+}
+
+/* Контейнер для карточек */
+.card-container {
+    display: flex;
+    gap: 10px;  /* Уменьшаем промежутки между карточками */
+    margin-top: 20px;  /* Уменьшаем отступ сверху */
+    margin-bottom: 20px;  /* Уменьшаем отступ снизу */
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 768px) {
+    .card {
+        width: 45%;
+        height: 280px;
+    }
+
+    .card-container {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 90%;
+        height: 250px;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}

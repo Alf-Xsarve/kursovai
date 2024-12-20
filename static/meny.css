@@ -1,0 +1,184 @@
+/* Меню сверху */
+#menu-line {
+    position: fixed;  /* Меню всегда сверху */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row; /* Сделаем горизонтальное расположение */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 1;  /* Сделаем меню всегда видимым */
+    transition: transform 0.3s ease-in-out;
+}
+
+#menu-line.hidden {
+    transform: translateY(-100%); /* Скрыть меню */
+}
+
+/* Стили для списка элементов меню */
+#menu-line ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    width: 100%;
+}
+
+/* Левый блок меню */
+.left-menu {
+    display: flex;
+    flex-grow: 1;
+}
+
+.left-menu li {
+    margin: 0 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Правый блок с кнопками авторизации */
+.auth-buttons-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+.auth-buttons-container li {
+    margin-left: 10px;
+}
+
+/* Общие стили для ссылок (убираем нижнее подчеркивание) */
+#menu-line a {
+    text-decoration: none;  /* Убираем нижнее подчеркивание */
+    color: inherit;  /* Наследуем цвет от родительских элементов */
+}
+
+/* Общие стили для кнопок */
+#menu-line .login-button,
+#menu-line .register-button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Индивидуальные стили для кнопок */
+#menu-line .login-button {
+    background-color: #007BFF;
+    color: white;
+}
+
+#menu-line .register-button {
+    background-color: white;
+    color: #007BFF;
+    border: 2px solid #007BFF;
+}
+
+#menu-line .login-button:hover,
+#menu-line .register-button:hover {
+    transform: scale(1.05);
+    background-color: #0056b3;
+}
+
+/* Кнопка "Регистрация" - при наведении */
+#menu-line .register-button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Стили для кнопки "Мой кабинет" */
+#myCabinetButton a {
+    cursor: pointer;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 3px;
+    margin-left: 10px;
+}
+
+#myCabinetButton a:hover {
+    background-color: #0056b3;
+}
+
+#myCabinetButton.hidden {
+    display: none;
+}
+
+/* Стили для body */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    background-image: url("foto_1.webp");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding-top: 50px; /* Для предотвращения наложения контента на меню */
+}
+
+/* Стили для контейнера карточек */
+.card-container {
+    display: flex;  /* Используем Flexbox */
+    flex-wrap: wrap;  /* Чтобы карточки переносились на новую строку */
+    justify-content: flex-start;  /* Располагаем карточки слева */
+    gap: 20px;  /* Добавляем промежутки между карточками */
+}
+
+/* Стили для карточек */
+.card {
+    width: 200px; /* Ширина каждой карточки */
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    #menu-line {
+        flex-direction: column;  /* Меню вертикально на мобильных */
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    .left-menu {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .auth-buttons-container {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%; /* Карточки становятся шире на мобильных */
+    }
+
+    .info-row {
+        padding: 15px; /* Уменьшаем отступы для мобильных */
+    }
+
+    .info-row h2 {
+        font-size: 22px; /* Уменьшаем размер шрифта для мобильных */
+    }
+}

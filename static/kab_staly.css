@@ -1,0 +1,225 @@
+/* Основные стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('foto_1.webp') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+}
+
+/* Шапка страницы */
+.header {
+    background-color: rgba(98, 0, 234, 0.9);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Основной контейнер */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Блок информации о пользователе */
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.user-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #ddd;
+    margin-right: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.user-details {
+    flex: 1;
+}
+
+.user-details h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.user-details p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+/* Список действий */
+.actions {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+.actions li {
+    display: inline;
+}
+
+.actions a {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #6200ea;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.actions a:hover {
+    background-color: #3700b3;
+    transform: translateY(-2px);
+}
+
+/* Секция с бронированиями */
+.bookings {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.bookings h2 {
+    font-size: 24px;
+    color: #6200ea;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.bookings ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.bookings li {
+    background-color: #f5f5f5;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.bookings p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.bookings p strong {
+    font-weight: bold;
+    color: #6200ea;
+}
+
+.bookings li:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Стили для кнопок удаления и изменения бронирования */
+.bookings .action-buttons {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.bookings .action-buttons form {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.bookings .action-buttons button {
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.bookings .action-buttons button.delete-btn {
+    background-color: #e63946;
+}
+
+.bookings .action-buttons button.delete-btn:hover {
+    background-color: #d32f2f;
+    transform: translateY(-2px);
+}
+
+.bookings .action-buttons button.edit-btn {
+    background-color: #f1c40f;
+}
+
+.bookings .action-buttons button.edit-btn:hover {
+    background-color: #f39c12;
+    transform: translateY(-2px);
+}
+.back-to-home {
+    margin: 20px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.back-btn {
+    font-size: 1rem;
+    color: #6200ea;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 8px 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.back-btn:hover {
+    background-color: #f3e5f5;
+    transform: translateY(-2px);
+}
+
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        width: 90%;
+    }
+
+    .user-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .user-avatar {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .actions {
+        justify-content: center;
+    }
+
+    .actions a {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
