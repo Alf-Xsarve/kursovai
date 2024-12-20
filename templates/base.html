@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}TBS{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='meny.css') }}">
+</head>
+<body>
+    <!-- Верхнее меню -->
+    <div id="menu-line">
+        <ul>
+            <div class="left-menu">
+                <li class="home-button"><a href="/">Главная</a></li>
+            </div>
+            <div class="auth-buttons-container">
+                <!-- Кнопка "Мой кабинет", которая изначально скрыта -->
+                <li id="myCabinetButton" style="display: none;" onclick="toggleCabinetWindow()">Мой кабинет</li>
+                {% if logged_in %} <!-- Если пользователь авторизован -->
+                <li id="myCabinetButton"><a href="/kab">Мой кабинет</a></li>
+                {% else %}
+                    <li class="login-button"><a href="/login">Войти</a></li> <!-- Кнопка "Войти" -->
+                    <li class="register-button"><a href="/register">Регистрация</a></li> <!-- Кнопка "Регистрация" -->
+                {% endif %}
+            </div>
+        </ul>
+    </div>
+
+    <!-- Основной контент -->
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- Подключение скриптов -->
+    <script src="{{ url_for('static', filename='js_project/java.js') }}"></script>
+</body>
+</html>

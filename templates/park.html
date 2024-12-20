@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бронирование билетов - Парк аттракционов</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='park_style.css') }}">
+</head>
+<body>
+    {% extends "base.html" %}
+
+    {% block title %}Бронирование{% endblock %}
+
+    {% block content %}
+    <div class="park-container">
+        <!-- Форма бронирования билетов -->
+        <div class="booking-form">
+            <h3>Бронирование билетов для парка {{ park_name }}</h3>
+            <form method="post" id="booking-form">
+                <!-- Добавляем скрытое поле для передачи названия парка -->
+                <input type="hidden" id = "park_name" name="park_name" value="{{ park_name }}">
+                
+                <!-- Скрытое поле для передачи итоговой стоимости -->
+                <input type="hidden" id="hidden-total-price" name="total_price" value="0">
+                
+                <label for="visit-date">Дата посещения:</label>
+                <input type="date" id="visit-date" name="visit-date" required>
+            
+                <label for="adults">Количество взрослых:</label>
+                <input type="number" id="adults" name="adults" min="1" value="" required>
+            
+                <label for="children">Количество детей:</label>
+                <input type="number" id="children" name="children" min="1" value="" required>
+
+                <div class="price-info">
+                    <p>Взрослый билет: 1000 сом</p>
+                    <p>Детский билет: 500 сом</p>
+                </div>
+            
+                <div class="price-display">
+                    <p>Итоговая стоимость: <strong><span id="total-price">0</span></strong> сом</p>
+                </div>
+            
+                <button type="submit" id="submit">Забронировать</button>
+            </form>
+        </div>
+    </div>
+    {% endblock %}
+    <!-- Подключение JS-файла -->
+    <script src="{{ url_for('static', filename='js_project/park_bron.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход в систему</title>
+    <!-- Подключение стилей -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='meny.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='login_dizain.css') }}">
+</head>
+<body>
+    <!-- Форма входа -->
+    <div class="auth-container">
+        <h2>Авторизация</h2>
+        
+        <form id="loginForm" method="POST" action="/login">
+            <label for="name">Имя пользователя</label>
+            <input type="text" id="name" name="name" placeholder="Введите имя" autocomplete="username" required><br>
+
+            <label for="password">Пароль</label>
+            <input type="password" id="password" name="password" placeholder="Введите пароль" autocomplete="current-password" required><br>
+
+            <button type="submit">Войти</button>
+        </form>
+    </div>
+</body>
+</html>

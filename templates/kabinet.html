@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой кабинет</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='kab_staly.css') }}">
+</head>
+<body>
+    <!-- {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                    <div class="flash-message {{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %} -->
+
+    <!-- Добавляем стрелку возврата -->
+    <div class="back-to-home">
+        <a href="/" class="back-btn">
+            &#8592; На главную
+        </a>
+    </div>
+
+    <div class="header">
+        <h1>Мой кабинет</h1>
+    </div>
+    <div class="container">
+        <div class="user-info">
+            <div class="user-avatar"></div>
+            <div class="user-details">
+                <h2>{{ user.name }} {{ user.surname }}</h2>
+                <p>Номер телефона: {{ user.phone }}</p>
+                <p>Email: {{ user.email }}</p>
+                <p>Роль: Пользователь</p>
+            </div>
+        </div>
+        <div class="actions">
+            <li><a href="/logout">Выйти</a></li>
+        </div>
+
+        <div class="bookings">
+            <h2>Ваши бронирования</h2>
+            {% if bookings %}
+                <ul>
+                    {% for booking in bookings %}
+                        <li>
+                            <p><strong>Парк:</strong> {{ booking.park_name }}</p>
+                            <p><strong>Взрослых:</strong> {{ booking.adults_count }}</p>
+                            <p><strong>Детей:</strong> {{ booking.children_count }}</p>
+                            <p><strong>Общая стоимость:</strong> {{ booking.total_price }} сом</p>
+                            <p><strong>Дата посещения:</strong> {{ booking.visit_date }}</p>
+                            <p><strong>Дата бронирования:</strong> {{ booking.booking_date }}</p>
+                            <div class="booking-actions">
+                                <!-- Кнопка Удалить -->
+                                <form action="{{ url_for('delete_booking') }}" method="POST">
+                                    <input type="hidden" name="park_name" value="{{ booking['park_name'] }}">
+                                    <input type="hidden" name="visit_date" value="{{ booking['visit_date'] }}">
+                                    <button type="submit" class="delete-btn">Удалить</button>
+                                </form>
+                                <!-- Кнопка Изменить -->
+                                <form action="/edit_booking" method="get" style="display: inline;">
+                                    <input type="hidden" name="park_name" value="{{ booking['park_name'] }}">
+                                    <input type="hidden" name="visit_date" value="{{ booking['visit_date'] }}">
+                                    <button type="submit" class="edit-btn">Изменить</button>
+                                </form>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>У вас нет бронирований.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
